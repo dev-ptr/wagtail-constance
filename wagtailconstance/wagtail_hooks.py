@@ -1,7 +1,12 @@
 from django.conf.urls import url
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from wagtail.core import hooks
+
+from wagtail import VERSION as WAGTAIL_VERSION
+if WAGTAIL_VERSION < (3, 0):
+    from wagtail.core import hooks
+else:
+    from wagtail import hooks
 from wagtail.admin.menu import MenuItem
 from .views import ConstanceConfigView
 
