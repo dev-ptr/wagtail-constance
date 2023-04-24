@@ -1,18 +1,10 @@
 {% extends "wagtailadmin/base.html" %}
-{% load i18n %}
-
+{% load i18n static %}
 
 {% block titletag %}{% trans "Constance config" %}{% endblock %}
 {% block bodyclass %}constance{% endblock %}
 
 {% block content %}
-
-    <ul class="breadcrumb">
-        <li class="home"><a href="{% url 'wagtailadmin_home' %}" class="icon icon-home text-replace">{% trans 'Home' %}</a></li>
-        <li><a href="#">{% trans "Settings" %}</a></li>
-        <li><a href="{{ page.url }}">{% trans "Constance config" %}</a></li>
-    </ul>
-
     {% trans "Constance config" as constance_header %}
     {% include "wagtailadmin/shared/header.html" with title=constance_header icon="cogs" %}
 
